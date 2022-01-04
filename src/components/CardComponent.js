@@ -1,15 +1,15 @@
 import React from "react";
-import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-const CardComponent = ({character}) => {
+const CardComponent = ({ character }) => {
   return (
-    <div>
-      <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" src={character.img} style={{width:'100%'}} />
-        <Card.Body>
-          <Card.Title>{character.name}</Card.Title>
-        </Card.Body>
-      </Card>
+    <div class="card mt-2 shadow-sm">
+      <img src={character.img} class="card-img-top" alt={character.name} />
+      <div class="card-body">
+        <h5 class="card-title" style={{ whiteSpace: "nowrap" }}>
+          {character.name}
+        </h5>
+      </div>
     </div>
   );
 };
