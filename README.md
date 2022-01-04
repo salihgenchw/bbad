@@ -6,7 +6,7 @@ Live Demo Coming Soon [Create React App](https://github.com/facebook/create-reac
 
 In the project directory, you can run:
 
-### `npm start`
+### `Create-React-App, React-Router (v6), React-Bootstrap, React-Loading, React-Redux, Redux-Toolkit, Redux-Thunk`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
