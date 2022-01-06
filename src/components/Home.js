@@ -18,7 +18,6 @@ const Home = () => {
       dispatch(fetchCharacter());
     }
   }, [dispatch, status]);
-  console.log(characters);
 
   return (
     <div className="container">

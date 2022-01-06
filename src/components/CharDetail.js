@@ -11,7 +11,6 @@ const CharDetail = () => {
       .then((res) => res.data)
       .then((data) => setChar(data[0]));
   }, [char_id]);
-  console.log(char);
 
   return (
     <div className="container">

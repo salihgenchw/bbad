@@ -29,7 +29,6 @@ export const charactersSlice = createSlice({
     },
     [fetchCharacter.fulfilled]: (state, actions) => {
       state.status = "succeeded";
-
       state.items = [...state.items, ...actions.payload];
       state.page += 1;
 
@@ -39,7 +38,6 @@ export const charactersSlice = createSlice({
     },
     [fetchCharacter.rejected]: (state, actions) => {
       state.status = "failed";
-
       state.error = actions.error.message;
     },
   },
