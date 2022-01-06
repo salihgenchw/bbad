@@ -7,47 +7,47 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   const characters = useSelector((state) => state.characters.items);
-  const isLoading = useSelector((state) => state.characters.isLoading);
+  const status = useSelector((state) => state.characters.status);
   const nextPage = useSelector((state) => state.characters.page);
   const hasNextPage = useSelector((state) => state.characters.hasNextPage);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchCharacter());
-  }, [dispatch]);
+    if (status === "idle") {
+      dispatch(fetchCharacter());
+    }
+  }, [dispatch, status]);
   console.log(characters);
 
   return (
     <div className="container">
       <div className="row">
-        {isLoading && <Loading type="spin" color="green"></Loading>}
-
         {characters.map((character) => (
           <div className="col-lg-3 col-md-4 col-sm-6" key={character.char_id}>
-            <Link to="/char/3">
+            <Link to={`/char/${character.char_id}`}>
               <CardComponent character={character} />
             </Link>
           </div>
         ))}
       </div>
-      {!isLoading && (
-        <div style={{ textAlign: "center" }}>
-          {isLoading && <Loading type="spin" color="green"></Loading>}
-          {hasNextPage && (
-            <button
-              className="btn btn-warning my-5"
-              onClick={() => dispatch(fetchCharacter(nextPage))}
-            >
-              Load More ({nextPage})
-            </button>
-          )}
 
-          {!hasNextPage && (
-            <div className="my-5">There is nothing to be show.</div>
-          )}
-        </div>
-      )}
+      <div style={{ textAlign: "center" }}>
+        {status === "loading" && <Loading type="spin" color="green"></Loading>}
+
+        {hasNextPage && (
+          <button
+            className="btn btn-success my-5"
+            onClick={() => dispatch(fetchCharacter(nextPage))}
+          >
+            Load More ({nextPage})
+          </button>
+        )}
+
+        {!hasNextPage && (
+          <div className="my-5">There is nothing to be show.</div>
+        )}
+      </div>
     </div>
   );
 };

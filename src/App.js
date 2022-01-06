@@ -7,11 +7,11 @@ import CharDetail from "./components/CharDetail";
 function App() {
   return (
     <div className="App">
-      <Header />
       <BrowserRouter>
+        <Header />
         <Routes>
-          <Route exact path="/"  element={<Home />}></Route>
-          <Route path="/char/:char_id" component={<CharDetail/>}></Route>
+          <Route exact path="/" element={<Home />}></Route>
+          <Route path="/char/:char_id" element={<CharDetail />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

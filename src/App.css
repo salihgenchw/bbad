@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 .card {
   overflow: hidden;
   border-radius: 3% !important;
@@ -27,4 +29,14 @@
     object-fit: cover;
     margin: 0 auto;
   }
+}
+
+
+.detailcard img {
+  min-height: 55vh;
+}
+
+.DetailH1{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
 }

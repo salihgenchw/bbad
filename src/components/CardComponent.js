@@ -1,12 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const CardComponent = ({ character }) => {
   return (
-    <div class="card mt-2 shadow-sm">
-      <img src={character.img} class="card-img-top" alt={character.name} />
-      <div class="card-body">
-        <h5 class="card-title" style={{ whiteSpace: "nowrap" }}>
+    <div className="card mt-2 shadow-sm">
+      <img src={character.img} className="card-img-top" alt={character.name} />
+      <div className="card-body">
+        <h5 className="card-title" style={{ whiteSpace: "nowrap" }}>
           {character.name}
         </h5>
       </div>
