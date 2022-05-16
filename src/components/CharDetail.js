@@ -50,8 +50,8 @@ const CharDetail = () => {
                 </button>
               ))}
             </h6>
-            <Link to="/">
-              <button className="btn btn-outline-success mt-3">
+            
+              <button className="btn btn-outline-success mt-3" onClick={()=>Navigation(-1)}>
                 BACK TO LİST
               </button>
             </Link>
