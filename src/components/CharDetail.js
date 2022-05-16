@@ -51,11 +51,9 @@ const CharDetail = () => {
                 </button>
               ))}
             </h6>
-            
               <button className="btn btn-outline-success mt-3" onClick={()=>navigate(-1)}>
                 BACK TO LİST
               </button>
-            </Link>
           </div>
         </div>
       )}
