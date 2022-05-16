@@ -1,10 +1,11 @@
-import { Link,Navigation,useParams } from "react-router-dom";
+import { Link,useNavigate,useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
 const CharDetail = () => {
   const [char, setChar] = useState();
   const { char_id } = useParams();
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios(`${process.env.REACT_APP_API_BASE_ENDPOINT}/characters/${char_id}`)
@@ -51,7 +52,7 @@ const CharDetail = () => {
               ))}
             </h6>
             
-              <button className="btn btn-outline-success mt-3" onClick={()=>Navigation(-1)}>
+              <button className="btn btn-outline-success mt-3" onClick={()=>navigate(-1)}>
                 BACK TO LİST
               </button>
             </Link>
